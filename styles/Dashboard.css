@@ -1,0 +1,250 @@
+/* ================== GLOBAL ================== */
+body {
+  margin: 0;
+  background: linear-gradient(135deg, #0d0d0d, #1a0033, #2e0854);
+  color: #ffffff;
+  font-family: 'Inter', sans-serif;
+}
+
+/* ================== LAYOUT ================== */
+.dashboard-layout {
+  display: flex;
+  min-height: 100vh;
+}
+
+
+/* ================= SIDEBAR ================= */
+.sidebar {
+  width: 240px;
+  height: 100vh;
+  position: fixed;
+  left: 0;
+  top: 0;
+
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(28px);
+  -webkit-backdrop-filter: blur(28px);
+
+  border-right: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 30px 20px;
+  z-index: 10;
+
+  display: flex;
+  flex-direction: column;
+}
+
+/* ---------- BRAND ---------- */
+.sidebar-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 40px;
+}
+
+.logo-icon {
+  font-size: 2rem;
+}
+
+.brand-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.username {
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.user-status {
+  font-size: 0.8rem;
+  color: #bb86fc;
+}
+
+/* ---------- NAV LINKS ---------- */
+.sidebar-links {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex-grow: 1;
+}
+
+.sidebar-link {
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.75);
+  padding: 12px 14px;
+  border-radius: 10px;
+  transition: all 0.25s ease;
+  font-size: 0.95rem;
+}
+
+.sidebar-link:hover {
+  background: rgba(187, 134, 252, 0.15);
+  color: #bb86fc;
+}
+
+/* Active route */
+.sidebar-link.active {
+  background: rgba(187, 134, 252, 0.25);
+  color: #e9ddff;
+  box-shadow: inset 0 0 0 1px rgba(187, 134, 252, 0.4);
+}
+
+/* Logout */
+.sidebar-link.logout {
+  margin-top: auto;
+  color: #ff6b6b;
+}
+
+.sidebar-link.logout:hover {
+  background: rgba(255, 107, 107, 0.15);
+}
+
+
+/* ================== MAIN ================== */
+.dashboard-main {
+  margin-left: 240px;
+  padding: 50px;
+  width: 100%;
+}
+
+/* ================== GLASS CARD ================== */
+.dashboard-box {
+  max-width: 720px;
+  margin: auto;
+  padding: 35px;
+
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(18px);
+  border-radius: 20px;
+
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 25px 45px rgba(0, 0, 0, 0.4);
+}
+
+/* ================== TITLES ================== */
+.dashboard-subtitle {
+  text-align: center;
+  font-size: 26px;
+  font-weight: 600;
+  margin-bottom: 30px;
+  color: #f5f3ff;
+}
+
+/* ================== FORM ================== */
+.form-container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.form-input,
+.form-select {
+  padding: 14px 16px;
+  border-radius: 12px;
+  border: none;
+  background: rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+  font-size: 15px;
+}
+
+.form-input::placeholder {
+  color: #e0d9ff;
+}
+
+.form-input:focus,
+.form-select:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(186, 104, 255, 0.8);
+}
+
+/* ================== CHECKBOX ================== */
+.checkbox-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.checkbox-group label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+}
+
+/* ================== BUTTON ================== */
+.form-button {
+  margin-top: 20px;
+  padding: 15px;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 14px;
+  border: none;
+  cursor: pointer;
+
+  background: linear-gradient(135deg, #a855f7, #7c3aed);
+  color: #ffffff;
+  transition: 0.3s;
+}
+
+.form-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(168, 85, 247, 0.6);
+}
+
+/* ================== ERROR ================== */
+.error-text {
+  margin-top: 14px;
+  text-align: center;
+  color: #ffb4b4;
+}
+
+/* ================== RESULT ================== */
+.result-card {
+  margin-top: 35px;
+  padding: 25px;
+  background: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(14px);
+  border-radius: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.result-card h3 {
+  margin-bottom: 12px;
+  color: #ede9fe;
+}
+
+.result-card p {
+  font-size: 15px;
+  color: #f3e8ff;
+}
+
+.result-card strong {
+  display: block;
+  margin-top: 18px;
+  margin-bottom: 6px;
+}
+
+/* Risk colors */
+.result-card strong:nth-of-type(1) { color: #fca5a5; }
+.result-card strong:nth-of-type(2) { color: #86efac; }
+.result-card strong:nth-of-type(3) { color: #d8b4fe; }
+
+.result-card ul {
+  padding-left: 20px;
+}
+
+.result-card li {
+  font-size: 14px;
+  margin-bottom: 6px;
+}
+
+/* ================== RESPONSIVE ================== */
+@media (max-width: 768px) {
+  .dashboard-main {
+    padding: 20px;
+  }
+
+  .dashboard-box {
+    padding: 25px;
+  }
+}
